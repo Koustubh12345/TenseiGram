@@ -4,11 +4,11 @@
 
 <br>
 
-**Customized Telegram client for Android - privacy, performance and control.**
+**Customized Telegram client for Android — privacy, performance, bot hosting, and complete control.**
 
 <br>
 
-[![Typing](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1400&color=2AABEE&center=true&width=680&lines=Standard+Telegram,+extended+with+TenSei+Mods.&lines=Run+Bots+Locally.+AI+Mode.+Media+Downloader.&lines=TenSeiGram+client+built+on+MTProto.)](https://t.me/TenseiGram)
+[![Typing](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1400&color=2AABEE&center=true&width=680&lines=Standard+Telegram,+extended+with+TenSei+Mods.&lines=Run+Bots+Locally.+Bot+Login.+Unlimited+Accounts.&lines=Zero+Notification+Delay.+High-Speed+Engine.)](https://t.me/TenseiGram)
 
 <br>
 
@@ -37,16 +37,16 @@
 </div>
 
 <p align="center">
-  <a href="#overview">Overview</a> • <a href="#key-features">Features</a> • <a href="#run-bot-locally">Run Bot Locally</a> • <a href="#standard-telegram-vs-tenseigram">Comparison</a> • <a href="#screenshots">Screenshots</a> • <a href="#get-tenseigram">Download</a> • <a href="#developer">Developer</a> • <a href="#community">Community</a>
+  <a href="#overview">Overview</a> • <a href="#key-features">Key Features</a> • <a href="#run-bot-locally">Run Bot Locally</a> • <a href="#bot-login--unlimited-accounts">Bot Login & Accounts</a> • <a href="#standard-telegram-vs-tenseigram">Comparison</a> • <a href="#screenshots">Screenshots</a> • <a href="#get-tenseigram">Download</a> • <a href="#community">Community</a>
 </p>
 
 ---
 
 ## Overview
 
-**TenSeiGram** is an independent build of the Telegram Android client, extended with custom modifications, privacy controls, transfer optimizations, on-device Python bot hosting, and practical everyday tools.
+**TenSeiGram** is an advanced, independent build of the Telegram Android client, extended with custom modifications, on-device Python bot hosting, direct bot token login, unlimited account support, notification delay fixes, transfer optimizations, and practical everyday tools.
 
-Everything the standard client already does is preserved. What is added lives in a separate section called **TenSei Mods**, where each modification is an individual toggle — nothing is forced, and nothing replaces an existing Telegram setting.
+Everything the standard client already does is preserved. All added capabilities live in a dedicated section called **TenSei Mods**, where every modification is an individual toggle — nothing is forced, and nothing replaces an existing Telegram setting.
 
 | | |
 | :--- | :--- |
@@ -62,17 +62,18 @@ Everything the standard client already does is preserved. What is added lives in
 
 | | Feature | Description |
 | :---: | :--- | :--- |
-| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 10h.01M16 10h.01M9 16h6"/></svg> | **Run Bot Locally** | Host & run Python Telegram bots directly on-device with zero server costs, in-process runtime, and macOS-style terminal. |
-| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2" stroke-linecap="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h10M18 18h2"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="16" cy="18" r="2"/></svg> | **TenSei Mods** | A dedicated section housing every TenSeiGram modification and control. |
-| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E91E63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H4l2.5-3A8 8 0 1 1 21 12z"/><circle cx="12" cy="12" r="2.5"/></svg> | **Hide Typing** | Prevents typing and recording indicators from being sent in chats. |
-| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9C27B0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 12S5 5.5 12 5.5 22.5 12 22.5 12 19 18.5 12 18.5 1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3"/></svg> | **Hide Seen** | Withholds read receipts and story-view status from other users. |
-| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M9 6V4h6v2M6 6l1 14h10l1-14M10 10v6M14 10v6"/></svg> | **Show Deleted Messages** | Retains deleted messages in place with a clear deleted-message indicator. |
-| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2980B9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> | **View Edit History** | Displays the previous and updated versions of edited messages. |
-| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8E44AD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> | **Hide Phone From Bots** | Never share your phone number with bots or strangers. |
-| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2AABEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg> | **Enable Forward** | Forward anything from any group, channel or bot. |
-| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg> | **High-Speed Transfer** | Tuned networking threads and chunk sizes for faster downloads and uploads. |
-| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"/><rect x="10" y="10" width="4" height="4"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg> | **AI Mode** | Answers requests through 10 AI models with automatic fallback on failure. |
-| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D35400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11M7.5 10 12 14.5 16.5 10M4 20h16"/></svg> | **Media Downloader** | Saves YouTube, Instagram and TikTok videos locally and re-uploads them via Telegram. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 10h.01M16 10h.01M9 16h6"/></svg> | **Run Bot Locally** | Host & run Python Telegram bots directly on-device with zero server costs, in-process runtime, media conversions, and macOS-style terminal. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg> | **Direct Bot Token Login** | Log in directly using any Telegram Bot Token without needing a phone number. Fixed "Updating..." freeze for seamless bot client operation. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg> | **Unlimited Account Login** | Add and manage unlimited Telegram accounts simultaneously, completely removing the standard 3 or 4-account limit. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg> | **Instant Push Notifications** | Completely eliminated notification delivery delays with optimized wake-locks and background connection persistence. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg> | **Custom App Icons** | Select from official and custom app icons (TenSei Default, Nox Dark, Aqua, and more) directly in Settings. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M9 6V4h6v2M6 6l1 14h10l1-14M10 10v6M14 10v6"/></svg> | **Show Deleted Messages** | Retains messages deleted by other users in chats with a subtle red trash bin indicator. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2980B9" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg> | **View Edit History** | View prior revisions and timestamps of edited messages. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E91E63" stroke-width="2" stroke-linecap="round"><path d="M21 12a8 8 0 0 1-8 8H4l2.5-3A8 8 0 1 1 21 12z"/><circle cx="12" cy="12" r="2.5"/></svg> | **Ghost Mode (Privacy Suite)** | Hide typing/recording indicators, read receipts (Hide Seen), online status, and hide your phone number from bots. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2AABEE" stroke-width="2" stroke-linecap="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg> | **Bypass Forward Restrictions** | Save and forward media or messages from any restricted channel, group, or bot without watermarks. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A085" stroke-width="2" stroke-linecap="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg> | **High-Speed Transfer Engine** | Multi-threaded network optimization and expanded chunk sizes for significantly faster file downloads and uploads. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round"><rect x="7" y="7" width="10" height="10" rx="2"/><rect x="10" y="10" width="4" height="4"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg> | **AI Mode (`/aimode`)** | Built-in conversational AI answering queries across 10 top models with automatic failover fallback. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D35400" stroke-width="2" stroke-linecap="round"><path d="M12 3v11M7.5 10 12 14.5 16.5 10M4 20h16"/></svg> | **Media Downloader (`/ytdl`)** | Direct downloads from YouTube, Instagram, and TikTok, uploaded straight into Telegram chats. |
 
 ---
 
@@ -82,10 +83,17 @@ TenSeiGram includes a built-in **Local Bot Runner**, allowing you to host and ex
 
 - **Direct On-Device Hosting**: Upload or write any `app.py` script and `requirements.txt`.
 - **Integrated In-Process Engine**: Zero extra size added to the APK; runs safely without root or SELinux permission blocks.
-- **Full Media Access**: Supports photo, video, and document processing with multipart uploads.
+- **Full Media & I/O Handling**: Automatically handles incoming photos, videos, and documents, performs image conversion (e.g. JPG to PNG via native bitmaps), video repackaging, and multipart `sendDocument` uploads.
 - **macOS Terminal UI**: Real-time streaming logs with clean output, touch scrolling, and one-click Copy / Clear actions.
 - **Permanent Package Storage**: Downloaded runtimes and dependencies remain saved locally without re-downloading.
 - **One-Click Cache Management**: Top 3-dots menu to wipe all cached data, scripts, and temporary files whenever needed.
+
+---
+
+## Bot Login & Unlimited Accounts
+
+- **Direct Bot Token Login**: Log into Telegram as a bot by pasting your token from `@BotFather`. The app bypasses normal phone verification and solves the "Updating..." connection freeze, giving you a full, interactive bot management UI.
+- **Unlimited Accounts**: Add as many accounts as you need. Whether you run multiple personal accounts, work profiles, or bot dashboards, TenSeiGram lets you switch between them instantly with zero account caps.
 
 ---
 
@@ -93,20 +101,21 @@ TenSeiGram includes a built-in **Local Bot Runner**, allowing you to host and ex
 
 | Capability | Standard Telegram | TenSeiGram |
 | :--- | :---: | :---: |
-| Chats, media, calls, stickers | ✓ | ✓ |
-| Official MTProto API | ✓ | ✓ |
-| Account, privacy and notification settings | ✓ | ✓ |
-| **Run Bot Locally (On-Device Python Hosting)** | — | **✓** |
-| **Hide Typing** | — | **✓** |
-| **Hide Seen** | — | **✓** |
-| **Show Deleted Messages** | — | **✓** |
-| **View Edit History** | — | **✓** |
-| **Hide Phone From Bots** | — | **✓** |
-| **Enable Forward** | — | **✓** |
-| **High-Speed Download & Upload** | — | **✓** |
-| **AI Mode (10 models with fallback)** | — | **✓** |
-| **Media Downloader (YouTube / Instagram / TikTok)** | — | **✓** |
-| **Command Manager** | — | **✓** |
+| Standard Messaging, Calls, Cloud Storage | ✓ | ✓ |
+| Official MTProto Protocol & Privacy | ✓ | ✓ |
+| **Run Bot Locally (On-Device Python Bot Hosting)** | — | **✓** |
+| **Direct Bot Token Login (No Phone Required)** | — | **✓** |
+| **Unlimited Accounts (No 3-Account Limit)** | — | **✓** |
+| **Zero Notification Delay (Instant Push Sync)** | — | **✓** |
+| **Custom App Icons (TenSei, Nox, Aqua)** | — | **✓** |
+| **Show Deleted Messages (with Bin Icon)** | — | **✓** |
+| **View Message Edit History** | — | **✓** |
+| **Ghost Mode (Hide Typing, Hide Seen, Hide Online)** | — | **✓** |
+| **Hide Phone Number From Bots** | — | **✓** |
+| **Bypass Save & Forward Channel Restrictions** | — | **✓** |
+| **High-Speed Transfer Engine** | — | **✓** |
+| **Built-in AI Mode (`/aimode`)** | — | **✓** |
+| **Built-in Media Downloader (`/ytdl`)** | — | **✓** |
 
 ---
 
