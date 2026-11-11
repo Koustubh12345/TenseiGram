@@ -1,0 +1,138 @@
+name: Build TenSeiGram & Release
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Release Tag Name (e.g. v13.2.1)'
+        required: false
+        default: 'v13.2.1'
+      create_release:
+        description: 'Publish as GitHub Release'
+        required: false
+        type: boolean
+        default: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build Arm64 & Universal APKs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android Build-Tools & Platforms
+        run: |
+          yes | sdkmanager "platforms;android-36" "build-tools;36.0.0" || true
+
+      - name: Grant Execute Permission to Gradle Wrapper
+        run: chmod +x gradlew
+
+      - name: Build ARM64 Release APK
+        run: |
+          ./gradlew :TMessagesProj_App:assembleArm64Release \
+            -Dorg.gradle.jvmargs="-Xmx5g -XX:MaxMetaspaceSize=1g" \
+            --no-daemon -x test
+
+      - name: Build Universal (Afat) Release APK
+        run: |
+          ./gradlew :TMessagesProj_App:assembleAfatRelease \
+            -Dorg.gradle.jvmargs="-Xmx5g -XX:MaxMetaspaceSize=1g" \
+            --no-daemon -x test
+
+      - name: Prepare Release APKs
+        id: prepare_apks
+        run: |
+          mkdir -p release_apks
+
+          # Read app version from gradle.properties
+          VERSION=$(grep "APP_VERSION_NAME=" gradle.properties | cut -d'=' -f2 | tr -d '\r\n')
+          if [ -z "$VERSION" ]; then
+            VERSION="13.2.1"
+          fi
+          echo "APP_VERSION=$VERSION" >> $GITHUB_ENV
+
+          # Copy and rename ARM64 APK
+          ARM64_SRC=$(find TMessagesProj_App/build/outputs/apk/arm64/release -name "*.apk" | head -n 1)
+          if [ -f "$ARM64_SRC" ]; then
+            cp "$ARM64_SRC" "release_apks/TenSeiGram-v${VERSION}-arm64-v8a.apk"
+            echo "Copied ARM64 APK: $(ls -lh release_apks/TenSeiGram-v${VERSION}-arm64-v8a.apk)"
+          fi
+
+          # Copy and rename Universal (Afat) APK
+          AFAT_SRC=$(find TMessagesProj_App/build/outputs/apk/afat/release -name "*.apk" | head -n 1)
+          if [ -f "$AFAT_SRC" ]; then
+            cp "$AFAT_SRC" "release_apks/TenSeiGram-v${VERSION}-universal.apk"
+            echo "Copied Universal APK: $(ls -lh release_apks/TenSeiGram-v${VERSION}-universal.apk)"
+          fi
+
+          ls -lh release_apks/
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: TenSeiGram-APKs
+          path: release_apks/*
+          if-no-files-found: error
+
+      - name: Determine Release Tag
+        id: tag_picker
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            TAG="${GITHUB_REF#refs/tags/}"
+          elif [ -n "${{ github.event.inputs.tag_name }}" ]; then
+            TAG="${{ github.event.inputs.tag_name }}"
+          else
+            TAG="v${{ env.APP_VERSION }}"
+          fi
+          echo "RELEASE_TAG=$TAG" >> $GITHUB_ENV
+          echo "Selected release tag: $TAG"
+
+      - name: Publish GitHub Release
+        if: ${{ startsWith(github.ref, 'refs/tags/v') || github.event.inputs.create_release == 'true' || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.RELEASE_TAG }}
+          name: TenSeiGram ${{ env.RELEASE_TAG }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: release_apks/*
+          body: |
+            ## TenSeiGram Official Release ${{ env.RELEASE_TAG }}
+
+            ### 🚀 Included APKs
+            - **`TenSeiGram-v${{ env.APP_VERSION }}-arm64-v8a.apk`**: Optimized for modern 64-bit ARM Android devices (faster, smaller size).
+            - **`TenSeiGram-v${{ env.APP_VERSION }}-universal.apk`**: Universal build containing all ABIs (arm64-v8a, armeabi-v7a, x86, x86_64).
+
+            ### 🌟 Key Highlights & Features
+            - **Run Bot Locally**: Host and execute Python Telegram bots directly on-device with zero server costs, in-process runtime, and macOS-style terminal UI.
+            - **Full Bot Media & I/O**: Supports image conversions, video handling, and multipart document uploads.
+            - **Bot Cache Management**: 3-dots action menu with one-click full cache clearing.
+            - **Upgraded Architecture**: Latest MTProto layer, instant push notifications, and native speed.
+            - **Custom Themes & Mods**: TenSei Mods menu, YTDL downloader, and privacy controls.

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Letter A -->
+    <path
+        android:strokeColor="#1C1C1E"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M4.5,17 L9,4.5 L13.5,17" />
+    <path
+        android:strokeColor="#1C1C1E"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M6.2,12.5 L11.8,12.5" />
+    <!-- Checkmark -->
+    <path
+        android:strokeColor="#2979FF"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M14,17.5 L17.5,21 L23,13" />
+</vector>
