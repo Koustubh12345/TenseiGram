@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Video frame -->
+    <path
+        android:strokeColor="#1C1C1E"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M3,6 C3,4.895 3.895,4 5,4 L15,4 C16.105,4 17,4.895 17,6 L17,18 C17,19.105 16.105,20 15,20 L5,20 C3.895,20 3,19.105 3,18 Z" />
+    <!-- Camera lens triangle -->
+    <path
+        android:fillColor="#1C1C1E"
+        android:strokeColor="#1C1C1E"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M17,10 L21,7.5 L21,16.5 L17,14 Z" />
+    <!-- Download arrow inside video screen -->
+    <path
+        android:strokeColor="#1C1C1E"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M10,8 L10,15 M7.5,12.5 L10,15 L12.5,12.5" />
+</vector>
