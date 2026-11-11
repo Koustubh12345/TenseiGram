@@ -43,13 +43,6 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install Android Build-Tools & Platforms
-        run: |
-          yes | sdkmanager "platforms;android-36" "build-tools;36.0.0" || true
-
       - name: Grant Execute Permission to Gradle Wrapper
         run: chmod +x gradlew
 
