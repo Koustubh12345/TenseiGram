@@ -5,6 +5,10 @@ on:
     branches:
       - main
       - master
+    paths-ignore:
+      - 'README.md'
+      - 'images/**'
+      - 'docs/**'
     tags:
       - 'v*'
   workflow_dispatch:
